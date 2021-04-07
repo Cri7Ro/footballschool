@@ -1,29 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const StyledSection = styled.section`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5rem 10%;
-    div {
-        display: flex;
-        align-items: center;
-        margin-bottom: 2.5rem;
-    }
-    div:last-child {
-        margin-bottom: 0;
-    }
-    h5 {
-        margin-right: 2vw;
-    }
-    h5:last-child {
-        margin-right: 0;
-    }
-    background-color: #00B0FF;
-    color: white;
-    overflow: hidden;
-`;
+import {StyledSection} from './AttentionStyle';
 
 const Attention: React.FC = () => {
   return (

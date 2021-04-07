@@ -1,26 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const StyledDiv = styled.div<{textColor: string, columnColor: string}>`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    img {
-        margin-bottom: 1.25rem;
-    }
-    h5 {
-        margin-bottom: 1.4rem;
-    }
-    p {
-        margin-bottom: 7rem;
-    }
-    border-radius: 40px;
-    color: ${props => props.textColor};
-    background-color: ${props => props.columnColor};
-    padding: 3rem 5vw;
-    z-index: 2;
-`;
+import {StyledDiv} from './CostLvlStyle';
 
 interface ICard {
     image: string,

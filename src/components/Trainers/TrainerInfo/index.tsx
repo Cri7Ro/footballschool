@@ -1,59 +1,25 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useRef, useState } from 'react';
+import {StyledButton, StyledButtonContainer, StyledContainer, StyledContentContainer, StyledImage} from './TrainerInfoStyle';
 
-const StyledButton = styled.button<{inf: boolean}>`
-    display: flex;
-    align-items: center;
-    padding: 1rem 1.3vw;
-    background-color: ${props => props.inf ? '#FFE197' : '#6D3EA2'};
-    color: ${props => props.inf ? '#6D3EA2' : 'white'};
-    border: 0;
-    cursor: pointer;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    &: focus {
-        outline: none;
-    }
-    margin-right: .6vw;
-`;
-
-const StyledButtonContainer = styled.div`
-    display: flex;
-    margin-bottom: 2.5rem;
-`;
-
-const StyledContentContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    padding-top: 7.5rem;
-    h4 {
-        margin-bottom: 2rem;
-    }
-`;
-
-const StyledContainer = styled.div`
-    display: flex;
-    align-items: flex-start;
-`;
-
-const StyledImage = styled.img`
-    max-width: 700px;
-    position: relative;
-`;
-
-interface trainerInfo {
+interface ITrainerInfo {
     trainer_name: string,
     trainer_education: string,
     trainer_achievements: string,
-    trainer_image: string
+    trainer_image: string,
+    height: number,
+    setHeight: (value: number | ((prevHeight: number) => number)) => void,
 };
 
-const TrainerInfo: React.FC<trainerInfo> = ({trainer_name, trainer_education, trainer_achievements, trainer_image}) => {
+const TrainerInfo: React.FC<ITrainerInfo> = ({trainer_name, trainer_education, trainer_achievements, trainer_image, height, setHeight}) => {
     const [info, setInfo] = useState<boolean>(false);
     const [presshand, setPresshand] = useState<boolean>(true);
     const [pressedu, setPressedu] = useState<boolean>(false);
+
+    const ref = useRef<HTMLImageElement | null>(null);
+
+    function handleImgLoad(): void {
+        setHeight(ref.current!.height);
+    }
 
     function handleEduClick(): void {
         setInfo(true);
@@ -82,9 +48,8 @@ const TrainerInfo: React.FC<trainerInfo> = ({trainer_name, trainer_education, tr
                     </StyledButton>
                 </StyledButtonContainer>
                 <h5>{info ? trainer_education : trainer_achievements}</h5>
-               
             </StyledContentContainer>
-            <StyledImage src={trainer_image} alt=""/>
+            <StyledImage ref={ref} onLoad={handleImgLoad} src={trainer_image} alt=""/>
         </StyledContainer>
   );
 }

@@ -1,55 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
-import styled from 'styled-components';
-import CafeAdvantages from './CafeAdvantages';
-
-const StyledSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  background-image: url(./img/cafe/background.png);
-  background-size: cover;
-  h2 {
-    margin: 7.5rem auto 27.5rem;
-  }
-  position: relative;
-  overflow: hidden;
-`;
-
-const StyledDiv = styled.div`
-  display: flex;
-  margin: 0 0 5rem 90%;
-  transition: .5s;
-`;
-
-interface IProps {
-  side: string
-  disabled: boolean
-}
-
-interface Attrs {
-  disabled: boolean
-}
-
-const StyledButton = styled.button.attrs<Attrs>(props => ({disabled: props.disabled}))<IProps>`
-    min-width: 80px;
-    height: 80px;
-    background-color: #6D3EA2;
-    border: 0;
-    border-radius: 50%;
-    cursor:  ${props => !props.disabled  ? 'pointer' : ''};
-    &: focus {
-        outline: none;
-    }
-    &: ${props => !props.disabled  ? 'active { outline: none; background-color: #FFE197;}' : ''};
-    filter: ${props => props.disabled  ? 'grayscale(70%)' : ''};
-    z-index: 2;
-    position: absolute;
-    top: 75%;
-    left: ${props => props.side === 'left' ? 'calc(100vw - (100vw - 100%))'  : '1%'};
-    transform: ${props => props.side === 'left' ? 'translateX(-120%)'  : ''}; 
-`;
-
+import {StyledDiv, StyledSection, StyledButton} from './CafeStyle';
+import CafeAdvantages from './CafeAdvantages/index';
 
 const Cafe: React.FC = () => {
 
@@ -134,7 +85,7 @@ const Cafe: React.FC = () => {
         />
         <CafeAdvantages
           heading='На большом экране'
-          text='В нашем кафе ранслируются самые лучшие спортивные события на огромном экране. Забронируйте зал для индивидуального просмотра фильмов.'
+          text='В нашем кафе транслируются самые лучшие спортивные события на огромном экране. Забронируйте зал для индивидуального просмотра фильмов.'
           src='./img/cafe/tv.png'
         />
         <CafeAdvantages

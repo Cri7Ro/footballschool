@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './reset.css';
 import {createGlobalStyle} from 'styled-components';
+import Popup from './components/Popup';
 
 export const GlobalFont = createGlobalStyle`
   @font-face {
@@ -69,7 +70,6 @@ export const GlobalFont = createGlobalStyle`
       };
     }
   }
-
 `;
 
 ReactDOM.render(

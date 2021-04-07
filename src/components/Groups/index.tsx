@@ -1,28 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
-import styled from 'styled-components';
-import GroupAge from './GroupAge';
-
-const StyledSection = styled.section`
-    padding: 7.5rem .5rem;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    h2 {
-        margin: auto;
-        margin-bottom: 7.5rem;
-    }
-    background-color: #6D3EA2;
-    overflow: hidden;
-
-    @media screen and (max-width: 480px) {
-        h2 {
-            text-align: center;
-        }
-        
-    }
-`;
-
-
+import {StyledSection} from './GroupsStyle';
+import GroupAge from './GroupAge/';
 
 const Groups: React.FC = () => {
     return (

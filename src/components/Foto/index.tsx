@@ -20,7 +20,12 @@ const StyledButton = styled.button<{side: string}>`
     position: absolute;
     top: 50%;
     left: ${props => props.side === 'left' ? 'calc(100vw - (100vw - 100%))'  : '1%'};
-    transform: ${props => props.side === 'left' ? 'translateX(-120%)'  : ''}; 
+    transform: ${props => props.side === 'left' ? 'translateX(-120%)'  : ''};
+    
+    @media screen and (max-width: 480px) {
+        height: 20px;
+        width: ;
+    }
 `;
 
 const StyledSection = styled.section`
@@ -34,6 +39,18 @@ const StyledSection = styled.section`
         width: 10vw;
     }
     overflow: hidden;
+
+    @media screen and (max-width: 480px) {
+        h2 {
+            font-size: 1rem;
+            line-height: 1rem;
+            top: 1.5rem;
+            left: 2.5vw;
+            z-index: 3;
+            color: white;
+            width: 10vw;
+        }
+    }
 `;
 
 const StyledImg = styled.img`
@@ -48,6 +65,12 @@ const Frame = styled.img`
     left: 0;
     z-index: 2;
     width: 300px;
+    opacity: .9;
+
+    @media screen and (max-width: 480px) {
+        top: .5rem;
+        width: 100px;
+    }
 `;
 
 const Foto: React.FC = () => {
@@ -70,11 +93,8 @@ const Foto: React.FC = () => {
         <StyledSection>
         <h2>Фото занятий</h2>
         <Frame src="./img/foto/frame.png" alt=""/>
-        
             <StyledButton side='right'onClick={handlePrevClick}><img src="./img/trainers/arrow_right.png" alt=""/></StyledButton>
-            
                 <StyledImg src={trainFoto[foto].image} alt=""/>
-            
             <StyledButton side='left' onClick={handleNextClick}><img src="./img/trainers/arrow_left.png" alt=""/></StyledButton>
         </StyledSection>
     );
