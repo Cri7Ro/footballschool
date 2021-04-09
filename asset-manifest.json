@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/footballschool/static/css/main.78f1263a.chunk.css",
+    "main.js": "/footballschool/static/js/main.afba9598.chunk.js",
+    "main.js.map": "/footballschool/static/js/main.afba9598.chunk.js.map",
+    "runtime-main.js": "/footballschool/static/js/runtime-main.4001f6ad.js",
+    "runtime-main.js.map": "/footballschool/static/js/runtime-main.4001f6ad.js.map",
+    "static/js/2.70358bfa.chunk.js": "/footballschool/static/js/2.70358bfa.chunk.js",
+    "static/js/2.70358bfa.chunk.js.map": "/footballschool/static/js/2.70358bfa.chunk.js.map",
+    "index.html": "/footballschool/index.html",
+    "static/css/main.78f1263a.chunk.css.map": "/footballschool/static/css/main.78f1263a.chunk.css.map",
+    "static/js/2.70358bfa.chunk.js.LICENSE.txt": "/footballschool/static/js/2.70358bfa.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4001f6ad.js",
+    "static/js/2.70358bfa.chunk.js",
+    "static/css/main.78f1263a.chunk.css",
+    "static/js/main.afba9598.chunk.js"
+  ]
+}
