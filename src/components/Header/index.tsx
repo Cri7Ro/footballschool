@@ -1,21 +1,19 @@
-import React, { useEffect, useRef } from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useRef, useState } from 'react';
 import Nav from './Nav'
 import {StyledHeader, StyleDiv, Burger, DropBox} from './HeaderStyle';
 
 const Header: React.FC = () => {
 
     const ref = useRef<HTMLElement | null>(null);
-    let refUl: any;
+    const [refUl, setRefUl] = useState<any>(null);
     
     useEffect(() => {
-        if (ref) refUl = ref.current?.firstChild;    
+        if (ref) setRefUl(ref.current?.firstChild);    
     }, [ref]);
 
     function handleOnClick(): void {
         if (refUl) {
-            let display = getComputedStyle(refUl).display;
-
+            let display: string = getComputedStyle(refUl).display;
             if (display === 'none') {
                 refUl.style.display = 'flex';
                 refUl.style.top = '52px';
@@ -37,9 +35,9 @@ const Header: React.FC = () => {
             <StyleDiv>
                 <span>+7(812)242 62 91</span>
                 <div className="socials">
-                    <a href='#'><img src="./img/socials/vk_red.png" alt="VK_LOGO"/></a>
-                    <a href='#'><img src="./img/socials/insta_red.png" alt="INST_LOGO"/></a>
-                    <a href='#'><img src="./img/socials/telegramm_red.png" alt="TELEGRAM_LOGO"/></a>
+                    <button><img src="./img/socials/vk_red.png" alt="VK_LOGO"/></button>
+                    <button><img src="./img/socials/insta_red.png" alt="INST_LOGO"/></button>
+                    <button><img src="./img/socials/telegramm_red.png" alt="TELEGRAM_LOGO"/></button>
                 </div>
             </StyleDiv>
         </StyledHeader>

@@ -54,19 +54,16 @@ export const Li = styled.li<{attr: string}>`
         switch (props.attr) {
             case 'phone': {
                 return './img/footer/phone.png';
-                break;
             }
             case 'e-mail': {
                 return './img/footer/letter.png';
-                break;
             }
             case 'question': {
                 return './img/footer/question.png';
-                break;
             }
             case 'time': {
                 return './img/footer/time.png';
-                break;
+                
             }
         }
     }});

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import MainHeading from './components/MainHeading';
 import Advantages from './components/Advantages';
@@ -10,7 +10,8 @@ import Cafe from './components/Cafe';
 import FootballLesson from './components/FootballLesson';
 import Footer from './components/Footer';
 import Popup from './components/Popup';
-import ConfirmAdd from './components/ConfirmAdd';
+import ConfirmSignup from './components/ConfirmAdd';
+import { BrowserRouter } from 'react-router-dom';
 
 const App: React.FC = () => {
 
@@ -18,22 +19,22 @@ const App: React.FC = () => {
   const [confirmSignup, setConfirmSignup] = useState<boolean>(false)
 
   return (
-  <>
-  <Header />
-  <main>
-    <MainHeading setSignup={setSignup}/>
-    <Advantages />
-    <Groups />
-    <Attention />
-    <Trainers />
-    <Cost />
-    <Cafe />
-    <FootballLesson />
-  </main>
-  <Footer />
-  <Popup signup={signup} setConfirmSignup={setConfirmSignup} setSignup={setSignup}/>
-  <ConfirmAdd confirm={confirmSignup} setConfirmSignup={setConfirmSignup}/>
-  </>
+  <BrowserRouter>
+    <Header />
+      <main>
+        <MainHeading setSignup={setSignup}/>
+        <Advantages />
+        <Groups />
+        <Attention />
+        <Trainers />
+        <Cost setSignup={setSignup}/>
+        <Cafe />
+        <FootballLesson />
+      </main>
+      <Footer setSignup={setSignup}/>
+    <Popup signup={signup} setConfirmSignup={setConfirmSignup} setSignup={setSignup}/>
+    <ConfirmSignup confirm={confirmSignup} setConfirmSignup={setConfirmSignup}/>
+  </BrowserRouter>
   );
 }
 

@@ -6,7 +6,7 @@ interface IState {
     setConfirmSignup: (value: boolean | ((prevHeight: boolean) => boolean)) => void
 };
 
-const ConfirmAdd: React.FC<IState> = ({confirm, setConfirmSignup}) => {
+const ConfirmSignup: React.FC<IState> = ({confirm, setConfirmSignup}) => {
     
     function handleClickClose(): void {
         setConfirmSignup(prev => !prev);
@@ -22,4 +22,4 @@ const ConfirmAdd: React.FC<IState> = ({confirm, setConfirmSignup}) => {
     );
 };
 
-export default ConfirmAdd;
+export default ConfirmSignup;

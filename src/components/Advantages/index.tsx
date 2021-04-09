@@ -4,7 +4,7 @@ import GridCells from './GridCells/';
 
 const Advantages: React.FC = () => {
     return (
-        <StyledSection>
+        <StyledSection id='advantages'>
             <h2>Преимущества</h2>
             <Grid>
                 <GridCells src='./img/advantages/present.png' alt='ЛОГО ПОДАРКА' text={<h5>Первое занятие<br/>бесплатно</h5>}/>

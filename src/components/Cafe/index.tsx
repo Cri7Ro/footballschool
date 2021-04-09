@@ -38,7 +38,7 @@ const Cafe: React.FC = () => {
       setCurrentFinishNext(container.offsetLeft);
       setFinishNext(container.offsetLeft);
     }
-  }, [container]);
+  }, [container, load]);
 	
   function handlePrevClick(): void {
     setVisibleNext(false);
@@ -74,7 +74,7 @@ const Cafe: React.FC = () => {
   };
 
   return (
-    <StyledSection>
+    <StyledSection id='cafe'>
       <h2>Уютное спортивное кафе PINECafe</h2>
       <StyledButton side='right' disabled={visiblePrev} onClick={handlePrevClick}><img src="./img/trainers/arrow_right.png" alt=""/></StyledButton>
       <StyledDiv ref = {myRef}>

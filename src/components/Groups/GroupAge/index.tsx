@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React from 'react';
 import {StyledDiv, StyledContainer, Image, Ellipse} from './GroupAgeStyle';
 
 type Side = 'left' | 'right';
@@ -9,8 +9,6 @@ interface IGroup{
     side: Side,
     src: string
 }
-
-type imgRef = HTMLImageElement | null;
 
 const GroupAge: React.FC<IGroup> = ({src, side, heading, text}) => {
   

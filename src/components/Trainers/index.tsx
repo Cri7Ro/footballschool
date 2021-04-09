@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {StyledSection, StyledButton, StyledDiv} from './TrainersStyle';
 import TrainerInfo from './TrainerInfo/'; 
 import {trainers_info} from './trainers_info';
-
-
 
 const Trainers: React.FC = () => {
     const [trainer, setTrainer] = useState<number>(0);
@@ -26,7 +24,7 @@ const Trainers: React.FC = () => {
     }
 
     return (
-    <StyledSection>
+    <StyledSection id='trainers'>
         <h2>Опытные тренеры</h2>
         <StyledButton height={height} side='right' onClick={handleRightClick}><img src="./img/trainers/arrow_right.png" alt=""/></StyledButton>
         <StyledDiv>

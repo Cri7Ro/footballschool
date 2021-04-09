@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React from 'react';
 import {StyledImg} from './BackImgStyle';
 
 interface Iprops {
@@ -8,10 +8,10 @@ interface Iprops {
   run: boolean
 }
 
-const BackImg = React.forwardRef<HTMLImageElement, Iprops>((props, ref) => {
+const BackImg: React.FC<Iprops> = (props) => {
   return (
-    <StyledImg ref={ref} src={props.image} top={props.top} left={props.left} run={props.run}/>
+    <StyledImg src={props.image} top={props.top} left={props.left} run={props.run}/>
   );
-});
+};
 
 export default BackImg;

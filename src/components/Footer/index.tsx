@@ -1,8 +1,12 @@
-import React, {useLayoutEffect, useEffect, useRef, useState} from 'react';
+import React, {useLayoutEffect, useEffect, useState} from 'react';
 import {StyledButton, StyledFooter, StyledMapBox, StyledSection, Li} from './FooterStyle';
 import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
 
-const Footer: React.FC = () => {
+interface IState {
+    setSignup: (value: boolean | ((prevHeight: boolean) => boolean)) => void,
+}
+
+const Footer: React.FC<IState> = ({setSignup}) => {
 
     const [marker, setMarker] = useState(null);
     const [map, setMap] = useState(null);
@@ -55,19 +59,23 @@ const Footer: React.FC = () => {
                 .setLngLat([30.331064, 60.025306])
                 .addTo(map))
         }
-      }, [map])
+      }, [map]);
+
+      function handleClick(): void {
+        setSignup(prev => !prev);
+      };
 
     return (
-        <StyledFooter>
+        <StyledFooter id='contacts'>
             <StyledSection>
                 <div>
                     <ul>
-                        <Li attr='question'><i>Есть вопросы?  <a href="">Пишите!</a></i></Li>
+                        <Li attr='question'><i>Есть вопросы? Оставляйте заявку!</i></Li>
                         <Li attr='phone'><i>+7(812)242 62 91</i></Li>
                         <Li attr='e-mail'><i>info@parksosnovka.ru</i></Li>
                         <Li attr='time'><i>Занятия по вт. и чт. с 16:00 до 17:00</i></Li>
                     </ul>
-                    <StyledButton> <img src="./img/footer/ball.png" alt=""/>Записаться</StyledButton>
+                    <StyledButton onClick={handleClick}> <img src="./img/footer/ball.png" alt=""/>Записаться</StyledButton>
                 </div>
                 <StyledMapBox id="map" />
             </StyledSection>

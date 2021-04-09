@@ -1,38 +1,26 @@
-import React, { RefObject, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useMemo, useEffect, useRef, useState } from 'react';
 import CostLvl from './CostLvl/';
 import {StyledButton, StyledDiv, StyledSection} from './CostStyle';
 import BackImg from './BackImg/';
 
 type myRef = null | HTMLHeadingElement;
 
-const Cost: React.FC = () => {
+interface IState {
+  setSignup: (value: boolean | ((prevHeight: boolean) => boolean)) => void,
+}
+
+const Cost: React.FC<IState> = ({setSignup}) => {
 
   const myRef = useRef<myRef>(null);
-  const curRef = useRef<HTMLImageElement | null>(null);
-  const curRef2 = useRef<HTMLImageElement | null>(null);
-  const curRef3 = useRef<HTMLImageElement | null>(null);
-  const curRef4 = useRef<HTMLImageElement | null>(null);
-  const curRef5 = useRef<HTMLImageElement | null>(null);
-  const curRef6 = useRef<HTMLImageElement | null>(null);
-  const curRef7 = useRef<HTMLImageElement | null>(null);
-  const curRef8 = useRef<HTMLImageElement | null>(null);
-  const curRef9 = useRef<HTMLImageElement | null>(null);
-  const curRef10 = useRef<HTMLImageElement | null>(null);
-  const curRef11 = useRef<HTMLImageElement | null>(null);
-  const curRef12 = useRef<HTMLImageElement | null>(null);
-  const curRef13 = useRef<HTMLImageElement | null>(null);
-  const curRef14 = useRef<HTMLImageElement | null>(null);
-  const curRef15 = useRef<HTMLImageElement | null>(null);
+  
 
   const [visible, setVisible] = useState<boolean>(false);
 
-  const [top, setTop] = useState<number>(30);
-
-  const options: Object = {
+  const options: Object = useMemo(() => ({
       root: null,
       rootMargin: '0px',
       threshold: 0
-  }
+  }), []);
 
   function handleOnScroll(entries: IntersectionObserverEntry[]) {
       const [entry]: IntersectionObserverEntry[] = entries;
@@ -40,35 +28,40 @@ const Cost: React.FC = () => {
   }
 
   useEffect(() => {
+      const section = myRef.current;
       const observer: IntersectionObserver = new window.IntersectionObserver(handleOnScroll, options);
-      if (myRef.current) {
-          observer.observe(myRef.current);
+      if (section) {
+          observer.observe(section);
       }
       return (() => {
-          if (myRef.current) {
-              observer.unobserve(myRef.current);
+          if (section) {
+              observer.unobserve(section);
           }
       });
   }, [myRef, options]);
 
+  function handleClick(): void {
+    setSignup(prev => !prev);
+  };
+
   return (
-      <StyledSection ref={myRef}>
+      <StyledSection ref={myRef} id='cost'>
         <h2>Сколько стоит школа</h2>
-        <BackImg ref={curRef} image='./img/cost/1.png' top={5} left={10} run={visible} />
-        <BackImg ref={curRef2} image='./img/cost/2.png' top={-5} left={70} run={visible}/>
-        <BackImg ref={curRef3} image='./img/cost/3.png' top={30} left={0} run={visible}/>
-        <BackImg ref={curRef4} image='./img/cost/4.png' top={70} left={0} run={visible}/>
-        <BackImg ref={curRef5} image='./img/cost/5.png' top={50} left={35} run={visible}/>
-        <BackImg ref={curRef6} image='./img/cost/6.png' top={80} left={90} run={visible}/>
-        <BackImg ref={curRef7} image='./img/cost/7.png' top={50} left={57} run={visible}/>
-        <BackImg ref={curRef8} image='./img/cost/8.png' top={20} left={60} run={visible}/>
-        <BackImg ref={curRef9} image='./img/cost/9.png' top={10} left={30}  run={visible}/>
-        <BackImg ref={curRef10} image='./img/cost/10.png' top={50} left={90} run={visible}/>
-        <BackImg ref={curRef11} image='./img/cost/11.png' top={30} left={80} run={visible}/>
-        <BackImg ref={curRef12} image='./img/cost/12.png' top={50} left={10} run={visible}/>
-        <BackImg ref={curRef13} image='./img/cost/13.png' top={5} left={85} run={visible}/>
-        <BackImg ref={curRef14} image='./img/cost/14.png' top={80} left={70} run={visible}/>
-        <BackImg ref={curRef15} image='./img/cost/15.png' top={80} left={20} run={visible}/>
+        <BackImg image='./img/cost/1.png' top={5} left={10} run={visible} />
+        <BackImg image='./img/cost/2.png' top={-5} left={70} run={visible}/>
+        <BackImg image='./img/cost/3.png' top={30} left={0} run={visible}/>
+        <BackImg image='./img/cost/4.png' top={70} left={0} run={visible}/>
+        <BackImg image='./img/cost/5.png' top={50} left={35} run={visible}/>
+        <BackImg image='./img/cost/6.png' top={80} left={90} run={visible}/>
+        <BackImg image='./img/cost/7.png' top={50} left={57} run={visible}/>
+        <BackImg image='./img/cost/8.png' top={20} left={60} run={visible}/>
+        <BackImg image='./img/cost/9.png' top={10} left={30}  run={visible}/>
+        <BackImg image='./img/cost/10.png' top={50} left={90} run={visible}/>
+        <BackImg image='./img/cost/11.png' top={30} left={80} run={visible}/>
+        <BackImg image='./img/cost/12.png' top={50} left={10} run={visible}/>
+        <BackImg image='./img/cost/13.png' top={5} left={85} run={visible}/>
+        <BackImg image='./img/cost/14.png' top={80} left={70} run={visible}/>
+        <BackImg image='./img/cost/15.png' top={80} left={20} run={visible}/>
         <StyledDiv>
           <CostLvl
             image='./img/cost/cat.png'
@@ -95,7 +88,7 @@ const Cost: React.FC = () => {
             columnColor='#C94336'
           />
         </StyledDiv>
-        <StyledButton>
+        <StyledButton onClick={handleClick}>
           <img src="./img/cost/ball.png" alt=""/>
           Попробовать
         </StyledButton>

@@ -1,5 +1,4 @@
 import React from 'react';
-import Popup from '../Popup';
 import {StyledSection} from './MainHeadingStyle';
 
 interface ISignup {
@@ -16,7 +15,7 @@ const MainHeading: React.FC<ISignup> = ({setSignup}) => {
         <StyledSection>
             <h1>Футбольная школа<br/>для детей от 3-х до 10 лет</h1>
             <p>Наши ученики становятся звездами<br/>футбола среди ровесников</p>
-            <button onClick={handleOnClick}>Записаться</button>
+            <button onClick={handleOnClick} id='signup'>Записаться</button>
         </StyledSection>
     );
 }

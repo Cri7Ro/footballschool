@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './reset.css';
 import {createGlobalStyle} from 'styled-components';
-import Popup from './components/Popup';
 
-export const GlobalFont = createGlobalStyle`
+const GlobalFont = createGlobalStyle`
   @font-face {
     src: url(./CirceRounded-Regular.ttf);
     font-family: 'CirceRounded';
     font-weight: normal;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
   
   body {

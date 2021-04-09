@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { HashLink } from 'react-router-hash-link';
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(HashLink)`
     text-decoration: none;
     color: white;
     font-size: 1.2rem;
@@ -12,6 +13,14 @@ export const StyledLink = styled.a`
 
 export const StyledUl = styled.ul`
     display: flex;
+    button {
+        background: #2E0062;
+        border: none;
+        &: focus {
+            outline: none;
+        }
+        cursor: pointer;
+    }
     li {
         margin-right: 1.7vw;
     }

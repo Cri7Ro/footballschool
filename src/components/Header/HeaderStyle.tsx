@@ -24,9 +24,18 @@ export const StyleDiv = styled.div`
     div {
         display: flex;
         align-items: center;
+
         @media screen and (max-width: 480px) {
             display: none;
         }
+    }
+    button {
+        background: #2E0062;
+        border: none;
+        &: focus {
+            outline: none;
+        }
+        cursor: pointer;
     }
 `;
 
