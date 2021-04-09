@@ -1,8 +1,15 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {StyledDiv, StyledSection, StyledButton} from './CafeStyle';
 import CafeAdvantages from './CafeAdvantages/index';
+import { useHistory } from 'react-router-dom';
 
 const Cafe: React.FC = () => {
+
+  const history = useHistory();
+
+  window.onload = () => {
+      history.push('/');
+  }
 
   //состояние disabled кнопки 
   const [visiblePrev, setVisiblePrev] = useState<boolean>(false);

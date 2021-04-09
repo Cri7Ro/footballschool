@@ -1,8 +1,17 @@
 import React from 'react';
 import {StyledSection, Grid} from './AdvantagesStyle';
 import GridCells from './GridCells/';
+import { useHistory } from 'react-router-dom';
+
 
 const Advantages: React.FC = () => {
+
+    const history = useHistory();
+
+    window.onload = () => {
+        history.push('/');
+    }
+
     return (
         <StyledSection id='advantages'>
             <h2>Преимущества</h2>

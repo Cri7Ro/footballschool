@@ -24,6 +24,19 @@ const Header: React.FC = () => {
             } else  refUl.style.display = 'none';  
         };
     };
+
+    function handleVkClick(): void {
+        console.log('ewfge4')
+        window.open('https://vk.com/sosnovkapark');
+    };
+
+    function handleInstClick(): void {
+        window.open('https://www.instagram.com/sosnovkapark/');
+    };
+
+    function handleTgClick(): void {
+        window.open('https://t.me/strom_789');
+    };
     
     return (
         <StyledHeader>
@@ -35,9 +48,9 @@ const Header: React.FC = () => {
             <StyleDiv>
                 <span>+7(812)242 62 91</span>
                 <div className="socials">
-                    <button><img src="./img/socials/vk_red.png" alt="VK_LOGO"/></button>
-                    <button><img src="./img/socials/insta_red.png" alt="INST_LOGO"/></button>
-                    <button><img src="./img/socials/telegramm_red.png" alt="TELEGRAM_LOGO"/></button>
+                    <button onClick={handleVkClick}><img src="./img/socials/vk_red.png" alt="VK_LOGO"/></button>
+                    <button onClick={handleInstClick}><img src="./img/socials/insta_red.png" alt="INST_LOGO"/></button>
+                    <button onClick={handleTgClick}><img src="./img/socials/telegramm_red.png" alt="TELEGRAM_LOGO"/></button>
                 </div>
             </StyleDiv>
         </StyledHeader>

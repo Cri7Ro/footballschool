@@ -2,6 +2,7 @@ import React, { useMemo, useEffect, useRef, useState } from 'react';
 import CostLvl from './CostLvl/';
 import {StyledButton, StyledDiv, StyledSection} from './CostStyle';
 import BackImg from './BackImg/';
+import { useHistory } from 'react-router-dom';
 
 type myRef = null | HTMLHeadingElement;
 
@@ -42,6 +43,12 @@ const Cost: React.FC<IState> = ({setSignup}) => {
   function handleClick(): void {
     setSignup(prev => !prev);
   };
+
+  const history = useHistory();
+
+  window.onload = () => {
+      history.push('/');
+  }
 
   return (
       <StyledSection ref={myRef} id='cost'>

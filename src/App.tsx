@@ -11,7 +11,7 @@ import FootballLesson from './components/FootballLesson';
 import Footer from './components/Footer';
 import Popup from './components/Popup';
 import ConfirmSignup from './components/ConfirmAdd';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route} from 'react-router-dom';
 
 const App: React.FC = () => {
 
@@ -22,6 +22,9 @@ const App: React.FC = () => {
   <BrowserRouter>
     <Header />
       <main>
+        <Route exact path='/'>
+          <div></div>
+        </Route>
         <MainHeading setSignup={setSignup}/>
         <Advantages />
         <Groups />

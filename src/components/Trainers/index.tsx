@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {StyledSection, StyledButton, StyledDiv} from './TrainersStyle';
 import TrainerInfo from './TrainerInfo/'; 
 import {trainers_info} from './trainers_info';
+import { useHistory } from 'react-router-dom';
 
 const Trainers: React.FC = () => {
     const [trainer, setTrainer] = useState<number>(0);
@@ -21,6 +22,12 @@ const Trainers: React.FC = () => {
         } else {
             setTrainer(0)
         }
+    }
+
+    const history = useHistory();
+
+    window.onload = () => {
+        history.push('/');
     }
 
     return (

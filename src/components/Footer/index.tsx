@@ -1,12 +1,19 @@
 import React, {useLayoutEffect, useEffect, useState} from 'react';
 import {StyledButton, StyledFooter, StyledMapBox, StyledSection, Li} from './FooterStyle';
 import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
+import { useHistory } from 'react-router-dom';
 
 interface IState {
     setSignup: (value: boolean | ((prevHeight: boolean) => boolean)) => void,
 }
 
 const Footer: React.FC<IState> = ({setSignup}) => {
+
+    const history = useHistory();
+
+    window.onload = () => {
+        history.push('/');
+    }
 
     const [marker, setMarker] = useState(null);
     const [map, setMap] = useState(null);
