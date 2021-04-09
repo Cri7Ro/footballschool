@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { HashLink } from 'react-router-hash-link';
+import { NavHashLink } from 'react-router-hash-link';
 
-export const StyledLink = styled(HashLink)`
+export const StyledLink = styled(NavHashLink)`
     text-decoration: none;
     color: white;
     font-size: 1.2rem;

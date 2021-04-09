@@ -11,10 +11,6 @@ const GlobalFont = createGlobalStyle`
     font-weight: normal;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
-  
   body {
     width: 100%;
     font-family: 'CirceRounded';
