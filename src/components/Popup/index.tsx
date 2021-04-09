@@ -49,7 +49,7 @@ const Popup: React.FC<ISignup> = ({signup, setSignup, setConfirmSignup}) => {
                 <label htmlFor="age"></label>
                     <input type='text' id='age' value={age} onChange={event=>setAge(event.target.value)} placeholder='Возраст ребенка'/>
                 <label htmlFor="date"></label>
-                    <input type="date" id='date' value={date} onChange={event=>setDate(event.target.value)} placeholder='Дата занятия'/>
+                    <input type="text" id='date' value={date} onChange={event=>setDate(event.target.value)} placeholder='Дата занятия'/>
                 <input type="submit"/>
                 <StyledButton onClick={handleClickClose}><img src="./img/close.png" alt=""/></StyledButton>
             </StyledForm>
