@@ -35,5 +35,8 @@ export const Grid = styled.div`
     @media screen and (max-width: 480px) {
         display: flex;
         flex-direction: column;
+        div {
+            margin-bottom: 1.5rem;
+        }
     }
 `;
