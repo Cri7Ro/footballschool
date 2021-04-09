@@ -32,5 +32,6 @@ export const StyledDiv = styled.div<{textColor: string, columnColor: string}>`
         p {
             margin-bottom: 3rem;
         }
+        margin-bottom: 1.5rem;
 }
 `;

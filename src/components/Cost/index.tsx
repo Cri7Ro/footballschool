@@ -13,7 +13,6 @@ const Cost: React.FC<IState> = ({setSignup}) => {
 
   const myRef = useRef<myRef>(null);
   
-
   const [visible, setVisible] = useState<boolean>(false);
 
   const options: Object = useMemo(() => ({
