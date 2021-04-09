@@ -18,6 +18,8 @@ const App: React.FC = () => {
   const [signup, setSignup] = useState<boolean>(false)
   const [confirmSignup, setConfirmSignup] = useState<boolean>(false)
 
+  window.onorientationchange = () => window.location.reload();
+
   return (
   <BrowserRouter>
     <Header />
