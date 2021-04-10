@@ -24,8 +24,9 @@ const Popup: React.FC<ISignup> = ({signup, setSignup, setConfirmSignup}) => {
     function handleSubmit(event: React.SyntheticEvent) {
         event.preventDefault();
         if(name && phone && age && date) {
-            setConfirmSignup(prev => !prev);
+            
             setSignup(prev => !prev);
+            setConfirmSignup(prev => !prev);
         }
         setName('');
         setPhone('');
@@ -35,6 +36,10 @@ const Popup: React.FC<ISignup> = ({signup, setSignup, setConfirmSignup}) => {
 
     function handleClickClose(): void {
         setSignup(prev => !prev);
+        setName('');
+        setPhone('');
+        setAge('');
+        setDate('');
     };
     
     return (
@@ -51,8 +56,8 @@ const Popup: React.FC<ISignup> = ({signup, setSignup, setConfirmSignup}) => {
                 <label htmlFor="date"></label>
                     <input type="text" id='date' value={date} onChange={event=>setDate(event.target.value)} placeholder='Дата занятия'/>
                 <input type="submit"/>
-                <StyledButton onClick={handleClickClose}><img src="./img/close.png" alt=""/></StyledButton>
             </StyledForm>
+            <StyledButton onClick={handleClickClose}><img src="./img/close.png" alt=""/></StyledButton>
         </StyledSection>
     );
 };
