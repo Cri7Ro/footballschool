@@ -12,13 +12,14 @@ const ConfirmSignup: React.FC<IState> = ({confirm, setConfirmSignup}) => {
         setConfirmSignup(prev => !prev);
     };
 
-    return (
-        <StyledSection confirm={confirm}>
+    return ( confirm ?
+        <StyledSection>
             <h3>Лучшее решение за сегодня!</h3>
             <img src="./img/hand.png" alt=""/>
             <h4>Заявка уже улетела нам на почту, скоро позвоним</h4>
             <StyledButton onClick={handleClickClose}><img src="./img/close.png" alt=""/></StyledButton>
         </StyledSection>
+        : null
     );
 };
 

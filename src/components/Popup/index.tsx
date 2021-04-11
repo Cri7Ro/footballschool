@@ -42,8 +42,8 @@ const Popup: React.FC<ISignup> = ({signup, setSignup, setConfirmSignup}) => {
         setDate('');
     };
     
-    return (
-        <StyledSection signup={signup}>
+    return (signup ? 
+        <StyledSection>
             <StyledForm onClick={event => event.stopPropagation()} onSubmit={handleSubmit} disabled={disabled}>
                 <h3>Запись на разовое занятие</h3>
                 <h5>Проходят по вторникам и четвергам с 16:00 до 17:00</h5>
@@ -59,6 +59,7 @@ const Popup: React.FC<ISignup> = ({signup, setSignup, setConfirmSignup}) => {
             </StyledForm>
             <StyledButton onClick={handleClickClose}><img src="./img/close.png" alt=""/></StyledButton>
         </StyledSection>
+        : null
     );
 };
 

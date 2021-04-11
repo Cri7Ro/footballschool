@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledSection = styled.section<{confirm: boolean}>`
+export const StyledSection = styled.section`
     position: fixed;
     top: 20%;
     left: 50%;
@@ -14,7 +14,7 @@ export const StyledSection = styled.section<{confirm: boolean}>`
     }
     -ms-overflow-style: none;
     scrollbar-width: none;
-    display: ${props => !props.confirm ? 'none' : 'flex'};
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;

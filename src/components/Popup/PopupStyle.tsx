@@ -54,7 +54,7 @@ export const StyledButton = styled.button`
     }
 `;
 
-export const StyledSection = styled.section<{signup: boolean}>`
+export const StyledSection = styled.section`
     position: fixed;
     top: 5%;
     left: 50%;
@@ -74,7 +74,7 @@ export const StyledSection = styled.section<{signup: boolean}>`
     border-radius: 40px;
     color: #2E0062;
     width: 35vw;
-    display: ${props => props.signup ? 'flex' : 'none'};
+    display: flex;
     align-items: center;
     padding: 0 5rem;
     z-index: 25;
